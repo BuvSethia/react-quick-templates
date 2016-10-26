@@ -1,0 +1,21 @@
+{
+  "name": "react-quick-templates",
+  "version": "0.0.1",
+  "description": "Auto-generate react component templates",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BuvSethia/react-quick-templates.git"
+  },
+  "keywords": [
+    "react",
+    "template",
+    "generator",
+    "component"
+  ],
+  "author": "Sumbhav Sethia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BuvSethia/react-quick-templates/issues"
+  },
+  "homepage": "https://github.com/BuvSethia/react-quick-templates#readme"
+}
