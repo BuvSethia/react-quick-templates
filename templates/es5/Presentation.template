@@ -2,7 +2,7 @@ var React = require('react');
 
 var PropTypes = React.PropTypes;
 
-var Hello = function (props) {
+var {class_name} = function (props) {
 	return (
 		<div>
 
@@ -10,8 +10,8 @@ var Hello = function (props) {
 	);
 };
 
-Hello.propTypes = {
+{class_name}.propTypes = {
 
 };
 
-module.exports = Hello;
+module.exports = {class_name};
