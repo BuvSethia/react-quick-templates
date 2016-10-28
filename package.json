@@ -27,11 +27,5 @@
   },
   "scripts": {
     "test": "xo"
-  },
-	"xo": {
-    "esnext": false,
-		"rules": {
-			"unicorn/filename-case": ["error", {"case": "pascalCase"}]
-		}
   }
 }
