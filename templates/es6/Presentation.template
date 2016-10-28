@@ -1,0 +1,13 @@
+import React, {PropTypes} from 'react';
+
+const {class_name} = (props) => (
+	<div>
+		
+	</div>
+);
+
+{class_name}.PropTypes = {
+
+};
+
+export default {class_name};

@@ -4,7 +4,7 @@
   "description": "Auto-generate react component templates",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BuvSethia/react-quick-templates.git"
+    "url": "https://github.com/BuvSethia/react-quick-templates.git"
   },
   "keywords": [
     "react",
@@ -17,5 +17,21 @@
   "bugs": {
     "url": "https://github.com/BuvSethia/react-quick-templates/issues"
   },
-  "homepage": "https://github.com/BuvSethia/react-quick-templates#readme"
+  "homepage": "https://github.com/BuvSethia/react-quick-templates#readme",
+  "dependencies": {
+    "commander": "^2.9.0"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "xo": "^0.17.0"
+  },
+  "scripts": {
+    "test": "xo"
+  },
+	"xo": {
+    "esnext": false,
+		"rules": {
+			"unicorn/filename-case": ["error", {"case": "pascalCase"}]
+		}
+  }
 }

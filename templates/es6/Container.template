@@ -1,0 +1,19 @@
+import React, {PropTypes} from 'react';
+
+export default class {class_name} extends React.Component {
+	constructor(props) {
+		super(props);
+	}
+
+	render() {
+		return (
+			<div>
+
+			</div>
+		);
+	}
+}
+
+{class_name}.PropTypes = {
+
+};

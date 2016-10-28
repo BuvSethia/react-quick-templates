@@ -1,0 +1,17 @@
+var React = require('react');
+
+var PropTypes = React.PropTypes;
+
+var Hello = function (props) {
+	return (
+		<div>
+
+		</div>
+	);
+};
+
+Hello.propTypes = {
+
+};
+
+module.exports = Hello;
