@@ -14,7 +14,9 @@ var write = require('write');
  * @param {String} path - Path of the file to be created
  */
 function createTemplateFile(version, type, path) {
-
+	
 }
 
-module.exports = createTemplateFile;
+module.exports = {
+	createTemplateFile: createTemplateFile
+};
