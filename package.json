@@ -19,13 +19,15 @@
   },
   "homepage": "https://github.com/BuvSethia/react-quick-templates#readme",
   "dependencies": {
-    "commander": "^2.9.0"
+    "commander": "^2.9.0",
+    "write": "^0.3.2"
   },
   "devDependencies": {
     "ava": "^0.16.0",
     "xo": "^0.17.0"
   },
   "scripts": {
-    "test": "xo"
+    "test": "xo",
+		"main": "node main.js"
   }
 }
