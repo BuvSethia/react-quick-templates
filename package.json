@@ -30,5 +30,10 @@
   "scripts": {
     "test": "xo",
     "main": "node main.js"
-  }
+  },
+	"xo": {
+		"rules": {
+			"brace-style": ["error", "stroustrup"]
+		}
+	}
 }
