@@ -5,6 +5,9 @@
  */
 
 'use strict';
+
+var fs = require('fs');
+var path = require('path');
 var write = require('write');
 
 /**
@@ -16,16 +19,16 @@ var write = require('write');
  */
 function createTemplateFile(version, type, path) {
 	if (version === 'es5' && type === 'p') {
-		return _writeComponent('./templates/es5/presentation.js', path);
+		return _writeComponent('./templates/es5/presentation.template', path);
 	}
 	else if (version === 'es5' && type === 'c') {
-		return _writeComponent('./templates/es5/container.js', path);
+		return _writeComponent('./templates/es5/container.template', path);
 	}
 	else if (version === 'es6' && type === 'p') {
-		return _writeComponent('./templates/es6/presentation.js', path);
+		return _writeComponent('./templates/es6/presentation.template', path);
 	}
 	else if (version === 'es6' && type === 'c') {
-		return _writeComponent('./templates/es6/container.js', path);
+		return _writeComponent('./templates/es6/container.template', path);
 	}
 	return false;
 }
@@ -37,16 +40,23 @@ function createTemplateFile(version, type, path) {
  * @returns {Boolean} Whether or not the file creation was successful
  */
 function _writeComponent(templatePath, filePath) {
-	var componentName = _extractComponentNameFromFilePath(filePath);
-}
+	var parsedPath = path.parse(filePath);
+	var componentName = parsedPath.name;
+	// Read the template file first
+	fs.readFile(templatePath, 'utf-8', function (error, template) {
+		if (error) {
+			return false;
+		}
+		// Insert the component name into the template
+		var componentFileContents = template.replace(/{class_name}/g, componentName);
 
-/**
- * Parse file path to get name of component
- * @param {String} filePath - The file path
- * @returns {String} The name of the component being created
- */
-function _extractComponentNameFromFilePath(filePath) {
-	return filePath.split()
+		// Now write the contents to the specified location
+		write(filePath, componentFileContents, function (error) {
+			if (error) {
+				return false;
+			}
+		});
+	});
 }
 
 module.exports = {
