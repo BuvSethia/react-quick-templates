@@ -8,6 +8,7 @@
 
 var fs = require('fs');
 var path = require('path');
+var slash = require('slash');
 var write = require('write');
 
 /**
@@ -40,7 +41,8 @@ function createTemplateFile(version, type, path) {
  * @returns {Boolean} Whether or not the file creation was successful
  */
 function _writeComponent(templatePath, filePath) {
-	var parsedPath = path.parse(filePath);
+	var normalizedPath = slash(filePath);
+	var parsedPath = path.parse(normalizedPath);
 	var componentName = parsedPath.name;
 	// Read the template file first
 	fs.readFile(templatePath, 'utf-8', function (error, template) {
@@ -51,7 +53,7 @@ function _writeComponent(templatePath, filePath) {
 		var componentFileContents = template.replace(/{class_name}/g, componentName);
 
 		// Now write the contents to the specified location
-		write(filePath, componentFileContents, function (error) {
+		write(normalizedPath, componentFileContents, function (error) {
 			if (error) {
 				return false;
 			}
@@ -59,6 +61,4 @@ function _writeComponent(templatePath, filePath) {
 	});
 }
 
-module.exports = {
-	createTemplateFile: createTemplateFile
-};
+module.exports = createTemplateFile;
