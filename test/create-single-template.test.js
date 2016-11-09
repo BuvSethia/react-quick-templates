@@ -1,6 +1,6 @@
 var fs = require('fs');
 var test = require('ava');
-// var rimraf = require('rimraf');
+var rimraf = require('rimraf');
 var rqt = require('../rqt');
 
 // All created files will go in this directory
@@ -41,8 +41,8 @@ test.cb('ES5 container named Hello in a new directory - POSIX filepath', t => {
 	});
 });
 
-test.after.always('Clean up created directory', () => {
-	/* rimraf(created, function (error) {
+test.after.always('Clean up created directory', t => {
+	rimraf(created, function (error) {
 		t.fail('Could not clean created directory with error: ' + error);
-	}); */
+	});
 });
