@@ -19,6 +19,7 @@ test.cb('ES5 container named Hello in a new directory - POSIX filepath', t => {
 		// If the file was created the function should return true
 		t.true(created);
 
+		// Check if the file was actually created
 		fs.exists(createFilePath, function (exists) {
 			t.true(exists);
 		});
@@ -28,7 +29,7 @@ test.cb('ES5 container named Hello in a new directory - POSIX filepath', t => {
 			if (errorCompare) {
 				t.fail('TEST ERROR: Error reading control file ' + compareFilePath);
 			}
-
+			
 			fs.readFile(createFilePath, 'utf-8', function (errorCreate, createData) {
 				if (errorCreate) {
 					t.fail('Error reading created file ' + createFilePath);
