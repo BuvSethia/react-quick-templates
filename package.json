@@ -1,7 +1,7 @@
 {
   "name": "react-quick-templates",
   "version": "0.0.1",
-  "description": "Auto-generate react component templates",
+  "description": "Auto-generate react component skeletons to quickstart your development.",
   "repository": {
     "type": "git",
     "url": "https://github.com/BuvSethia/react-quick-templates.git"
@@ -10,7 +10,9 @@
     "react",
     "template",
     "generator",
-    "component"
+    "component",
+		"quickstart",
+		"skeleton"
   ],
   "author": "Sumbhav Sethia",
   "license": "MIT",

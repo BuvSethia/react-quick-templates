@@ -6,11 +6,7 @@ var rqt = require('../rqt');
 // All created files will go in this directory
 var created = './created/';
 
-test('Testing is good to go', t => {
-	t.pass();
-});
-
-test.cb('ES5 container in a new directory - POSIX filepath', t => {
+test.cb('ES5 container in a new directory', t => {
 	// The control to which we will compare the created file
 	var compareFilePath = './compare/es5/Hello.js';
 	var createFilePath = created + 'es5c/Hello.js';
@@ -42,7 +38,7 @@ test.cb('ES5 container in a new directory - POSIX filepath', t => {
 	});
 });
 
-test.cb('ES5 presentation in a new directory - POSIX filepath', t => {
+test.cb('ES5 presentation in a new directory', t => {
 	// The control to which we will compare the created file
 	var compareFilePath = './compare/es5/Bye.js';
 	var createFilePath = created + 'es5p/Bye.jsx';
@@ -74,7 +70,7 @@ test.cb('ES5 presentation in a new directory - POSIX filepath', t => {
 	});
 });
 
-test.cb('ES6 container in a new directory - POSIX filepath', t => {
+test.cb('ES6 container in a new directory', t => {
 	// The control to which we will compare the created file
 	var compareFilePath = './compare/es6/Sup.js';
 	var createFilePath = created + 'es6c/Sup.js';
@@ -106,7 +102,7 @@ test.cb('ES6 container in a new directory - POSIX filepath', t => {
 	});
 });
 
-test.cb('ES6 presentation in a new directory - POSIX filepath', t => {
+test.cb('ES6 presentation in a new directory', t => {
 	// The control to which we will compare the created file
 	var compareFilePath = './compare/es6/Yo.js';
 	var createFilePath = created + 'es6p/Yo.js';
