@@ -8,7 +8,6 @@
 
 var fs = require('fs');
 var path = require('path');
-var slash = require('slash');
 var write = require('write');
 
 /**
@@ -40,11 +39,11 @@ function createComponent(version, type, path, callback) {
  * Insert component name into template and write it to the specified location
  * @param {String} template - Path (starting at template directory) of template being used
  * @param {String} filePath - Path to file being written
+ * @param {Function} callback - Callback function after completion of file write
  * @returns {Boolean} Whether or not the file creation was successful
  */
 function _writeComponent(template, filePath, callback) {
-	var normalizedPath = slash(filePath);
-	var parsedPath = path.parse(normalizedPath);
+	var parsedPath = path.parse(filePath);
 	var componentName = parsedPath.name;
 	var templatePath = path.join(__dirname, template);
 	// Read the template file first
@@ -57,7 +56,7 @@ function _writeComponent(template, filePath, callback) {
 		var componentFileContents = template.replace(/{class_name}/g, componentName);
 
 		// Now write the contents to the specified location
-		write(normalizedPath, componentFileContents, function (error) {
+		write(filePath, componentFileContents, function (error) {
 			if (error) {
 				callback(false);
 				return;

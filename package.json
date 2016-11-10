@@ -21,7 +21,6 @@
   "dependencies": {
     "chalk": "^1.1.3",
     "commander": "^2.9.0",
-    "slash": "^1.0.0",
     "write": "^0.3.2"
   },
   "devDependencies": {
@@ -33,8 +32,9 @@
     "test": "xo && ava -v"
   },
   "xo": {
-		"ignores": ["**/test/compare/**"
-		],
+    "ignores": [
+      "**/test/compare/**"
+    ],
     "rules": {
       "brace-style": [
         "error",
@@ -42,9 +42,9 @@
       ]
     }
   },
-	"ava": {
+  "ava": {
     "files": [
-			"**/test/*.js",
+      "**/test/*.js",
       "!**/test/compare/**"
     ]
   }
