@@ -29,7 +29,6 @@ program
 
 program.parse(process.argv);
 
-
 /**
  * The callback function used to tell the user the results after writing the file
  * @param {Boolean} successful - Was the write successful
