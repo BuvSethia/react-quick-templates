@@ -29,6 +29,13 @@ program
 
 program.parse(process.argv);
 
+
+/**
+ * The callback function used to tell the user the results after writing the file
+ * @param {Boolean} successful - Was the write successful
+ * @param {String} filePath - Path to the file which should have been written
+ * @param {String} componentName - Name of the component which should have been created
+ */
 function _logResults(successful, filePath, componentName) {
 	if (successful) {
 		console.log(chalk.green('Successfully created component ' + componentName + ' at ' + filePath + '!'));

@@ -11,6 +11,7 @@ var path = require('path');
 var write = require('write');
 
 /**
+ * What the createComponent callback looks like
  * @callback callback
  * @param {Boolean} success - Was the component write successful
  * @param {String} filePath - Path to where the created file should be
