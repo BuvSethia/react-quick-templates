@@ -33,6 +33,9 @@
   "scripts": {
     "test": "xo && ava -v"
   },
+	"bin": {
+		"rqt": "./cli.js"
+	},
   "xo": {
     "ignores": [
       "**/test/compare/**"

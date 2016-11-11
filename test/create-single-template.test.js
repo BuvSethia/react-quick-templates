@@ -1,3 +1,9 @@
+/**
+ * @file
+ * Unit tests for the single component generator function
+ *
+ */
+
 var fs = require('fs');
 var test = require('ava');
 var rimraf = require('rimraf');

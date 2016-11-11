@@ -13,6 +13,8 @@ var write = require('write');
 /**
  * @callback callback
  * @param {Boolean} success - Was the component write successful
+ * @param {String} filePath - Path to where the created file should be
+ * @param {String} moduleName - Name of the module that should have been created
  */
 
 /**
@@ -37,7 +39,7 @@ function createComponent(version, type, path, callback) {
 		_writeComponent('templates/es6/container.template', path, callback);
 	}
 	else {
-		callback(false);
+		callback(false, null, null);
 	}
 }
 
@@ -58,7 +60,7 @@ function _writeComponent(template, filePath, callback) {
 	// Read the template file first
 	fs.readFile(templatePath, 'utf-8', function (error, template) {
 		if (error) {
-			callback(false);
+			callback(false, filePath, componentName);
 			return;
 		}
 		// Insert the component name into the template
@@ -67,10 +69,10 @@ function _writeComponent(template, filePath, callback) {
 		// Now write the contents to the specified location
 		write(filePath, componentFileContents, function (error) {
 			if (error) {
-				callback(false);
+				callback(false, filePath, componentName);
 				return;
 			}
-			callback(true);
+			callback(true, filePath, componentName);
 		});
 	});
 }
