@@ -2,7 +2,7 @@
 
 /**
  * @file
- * The CLI for the application
+ * The definition of the CLI for the application
  *
  */
 
@@ -10,7 +10,7 @@
 
 var program = require('commander');
 var chalk = require('chalk');
-var rqt = require('./rqt');
+var rqt = require('../rqt');
 
 program
 	.version('0.0.1')
@@ -26,8 +26,6 @@ program
 	.option('-t --type <type>',
 		'Container (c) or presentation (p) components', /^(c|p)$/i, 'c')
 	.option('-e --esversion <esversion>', 'ES5 (es5) or ES6 (es6) style components', /^(es5|es6)$/i, 'es6');
-
-program.parse(process.argv);
 
 /**
  * The callback function used to tell the user the results after writing the file

@@ -31,10 +31,10 @@
     "xo": "^0.17.0"
   },
   "scripts": {
-    "test": "xo && ava -v"
+    "test": "xo && ava"
   },
 	"bin": {
-		"rqt": "./cli.js"
+		"rqt": "./bin/exec.js"
 	},
   "xo": {
     "ignores": [
