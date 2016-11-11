@@ -10,7 +10,7 @@
 
 var program = require('commander');
 var chalk = require('chalk');
-var rqt = require('../rqt');
+var rqt = require('./rqt');
 
 program
 	.version('0.0.1')
