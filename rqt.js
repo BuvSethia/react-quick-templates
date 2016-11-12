@@ -9,11 +9,12 @@
 var fs = require('fs');
 var path = require('path');
 var write = require('write');
+var CONSTANTS = require('./constants');
 
 /**
  * What the createComponent callback looks like
  * @callback callback
- * @param {Boolean} success - Was the component write successful
+ * @param {String} error - The error message, if there is an error
  * @param {String} filePath - Path to where the created file should be
  * @param {String} moduleName - Name of the module that should have been created
  */
@@ -28,19 +29,19 @@ var write = require('write');
  */
 function createComponent(version, type, path, callback) {
 	if (version === 'es5' && type === 'p') {
-		_writeComponent('templates/es5/presentation.template', path, callback);
+		_writeComponent(CONSTANTS.ES5_PRESENTATION, path, callback);
 	}
 	else if (version === 'es5' && type === 'c') {
-		_writeComponent('templates/es5/container.template', path, callback);
+		_writeComponent(CONSTANTS.ES5_CONTAINER, path, callback);
 	}
 	else if (version === 'es6' && type === 'p') {
-		_writeComponent('templates/es6/presentation.template', path, callback);
+		_writeComponent(CONSTANTS.ES6_PRESENTATION, path, callback);
 	}
 	else if (version === 'es6' && type === 'c') {
-		_writeComponent('templates/es6/container.template', path, callback);
+		_writeComponent(CONSTANTS.ES6_CONTAINER, path, callback);
 	}
 	else {
-		callback(false, null, null);
+		callback(CONSTANTS.BAD_OPTIONS, null, null);
 	}
 }
 
@@ -61,7 +62,7 @@ function _writeComponent(template, filePath, callback) {
 	// Read the template file first
 	fs.readFile(templatePath, 'utf-8', function (error, template) {
 		if (error) {
-			callback(false, filePath, componentName);
+			callback(CONSTANTS.TEMPLATE_ERROR, filePath, componentName);
 			return;
 		}
 		// Insert the component name into the template
@@ -70,10 +71,10 @@ function _writeComponent(template, filePath, callback) {
 		// Now write the contents to the specified location
 		write(filePath, componentFileContents, function (error) {
 			if (error) {
-				callback(false, filePath, componentName);
+				callback(CONSTANTS.WRITE_ERROR, filePath, componentName);
 				return;
 			}
-			callback(true, filePath, componentName);
+			callback(null, filePath, componentName);
 		});
 	});
 }

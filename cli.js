@@ -29,12 +29,12 @@ program
 
 /**
  * The callback function used to tell the user the results after writing the file
- * @param {Boolean} successful - Was the write successful
+ * @param {String} error - Error message if there is an error
  * @param {String} filePath - Path to the file which should have been written
  * @param {String} componentName - Name of the component which should have been created
  */
-function _logResults(successful, filePath, componentName) {
-	if (successful) {
+function _logResults(error, filePath, componentName) {
+	if (error === null) {
 		console.log(chalk.green('Successfully created component ' + componentName + ' at ' + filePath + '!'));
 	}
 	else {

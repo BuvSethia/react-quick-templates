@@ -17,9 +17,9 @@ test.cb('ES5 container in a new directory', t => {
 	const compareFilePath = './compare/es5/Hello.js';
 	const createFilePath = created + 'es5c/Hello.js';
 
-	rqt.createComponent('es5', 'c', createFilePath, function (created) {
-		// If the file was created the function should return true
-		t.true(created);
+	rqt.createComponent('es5', 'c', createFilePath, function (error) {
+		// If the file was created the error should be null
+		t.is(error, null);
 
 		// Check if the file was actually created
 		fs.exists(createFilePath, function (exists) {
@@ -49,9 +49,9 @@ test.cb('ES5 presentation in a new directory', t => {
 	const compareFilePath = './compare/es5/Bye.js';
 	const createFilePath = created + 'es5p/Bye.jsx';
 
-	rqt.createComponent('es5', 'p', createFilePath, function (created) {
-		// If the file was created the function should return true
-		t.true(created);
+	rqt.createComponent('es5', 'p', createFilePath, function (error) {
+		// If the file was created the error should be null
+		t.is(error, null);
 
 		// Check if the file was actually created
 		fs.exists(createFilePath, function (exists) {
@@ -81,9 +81,9 @@ test.cb('ES6 container in a new directory', t => {
 	const compareFilePath = './compare/es6/Sup.js';
 	const createFilePath = created + 'es6c/Sup.js';
 
-	rqt.createComponent('es6', 'c', createFilePath, function (created) {
-		// If the file was created the function should return true
-		t.true(created);
+	rqt.createComponent('es6', 'c', createFilePath, function (error) {
+		// If the file was created the error should be null
+		t.is(error, null);
 
 		// Check if the file was actually created
 		fs.exists(createFilePath, function (exists) {
@@ -113,9 +113,9 @@ test.cb('ES6 presentation in a new directory', t => {
 	const compareFilePath = './compare/es6/Yo.js';
 	const createFilePath = created + 'es6p/Yo.js';
 
-	rqt.createComponent('es6', 'p', createFilePath, function (created) {
-		// If the file was created the function should return true
-		t.true(created);
+	rqt.createComponent('es6', 'p', createFilePath, function (error) {
+		// If the file was created the error should be null
+		t.is(error, null);
 
 		// Check if the file was actually created
 		fs.exists(createFilePath, function (exists) {

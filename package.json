@@ -20,6 +20,12 @@
     "url": "https://github.com/BuvSethia/react-quick-templates/issues"
   },
   "homepage": "https://github.com/BuvSethia/react-quick-templates#readme",
+	"main": "rqt",
+	"files": [
+		"rqt.js",
+		"cli.js",
+		"constants.js"
+	],
   "dependencies": {
     "chalk": "^1.1.3",
     "commander": "^2.9.0",
@@ -34,7 +40,7 @@
     "test": "xo && ava"
   },
 	"bin": {
-		"rqt": "./bin/exec.js"
+		"rqt": "./cli.js"
 	},
   "xo": {
     "ignores": [
