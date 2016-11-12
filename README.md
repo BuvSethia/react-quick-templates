@@ -7,6 +7,8 @@ Save some typing by auto-generating simple React component skeletons. All you ha
 
 ## Installation
 	npm install react-quick-templates
+This will install it locally, though if you are planning on using the command line interface, it is probably better to install it globally with:
+	npm install react-quick-templates -g
 ## Usage
 You can use react-quick-templates in two ways: from your code or from the command line.
 ### From your code
