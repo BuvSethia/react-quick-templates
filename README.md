@@ -102,7 +102,7 @@ Bad options will result in the default options being used. You can also pass in 
 Like that^^
 
 ## Issues
-If you run into any issues using react-quick-templates or have any feature suggestions, drop an issue and I'll take a look at it!
+If you run into any issues using react-quick-templates or have any feature suggestions, drop an issue or a pull request and I'll take a look at it!
 
 ## License
 MIT
