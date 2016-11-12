@@ -70,9 +70,9 @@ react-quick-templates' CLI defaults to ES6 container components, but you can spe
 
 	rqt -p ./Hi/Sup.js
 
-will create the following file in the directory ./Hi/:
+will create the following file:
 
-	//Sup.js
+	//Sup.js, which is inside ./Hi/
 
 	import React, {PropTypes} from 'react';
 
