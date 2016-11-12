@@ -24,7 +24,8 @@
 	"files": [
 		"rqt.js",
 		"cli.js",
-		"constants.js"
+		"constants.js",
+		"./templates/"
 	],
   "dependencies": {
     "chalk": "^1.1.3",

@@ -41,7 +41,7 @@ function createComponent(version, type, path, callback) {
 		_writeComponent(CONSTANTS.ES6_CONTAINER, path, callback);
 	}
 	else {
-		callback(CONSTANTS.BAD_OPTIONS, null, null);
+		callback(CONSTANTS.ERROR.BAD_OPTIONS, null, null);
 	}
 }
 
@@ -62,7 +62,7 @@ function _writeComponent(template, filePath, callback) {
 	// Read the template file first
 	fs.readFile(templatePath, 'utf-8', function (error, template) {
 		if (error) {
-			callback(CONSTANTS.TEMPLATE_ERROR, filePath, componentName);
+			callback(CONSTANTS.ERROR.TEMPLATE_ERROR, filePath, componentName);
 			return;
 		}
 		// Insert the component name into the template
@@ -71,7 +71,7 @@ function _writeComponent(template, filePath, callback) {
 		// Now write the contents to the specified location
 		write(filePath, componentFileContents, function (error) {
 			if (error) {
-				callback(CONSTANTS.WRITE_ERROR, filePath, componentName);
+				callback(CONSTANTS.ERROR.WRITE_ERROR, filePath, componentName);
 				return;
 			}
 			callback(null, filePath, componentName);
