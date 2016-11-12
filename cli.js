@@ -27,6 +27,8 @@ program
 		'Container (c) or presentation (p) components', /^(c|p)$/i, 'c')
 	.option('-e --esversion <esversion>', 'ES5 (es5) or ES6 (es6) style components', /^(es5|es6)$/i, 'es6');
 
+program.parse(process.argv);
+
 /**
  * The callback function used to tell the user the results after writing the file
  * @param {String} error - Error message if there is an error
