@@ -72,7 +72,7 @@ This is the best way to use react-quick-templates.
 
 react-quick-templates' CLI defaults to ES6 container components, but you can specify your ES-version and component type by passing in options. For example, the command:
 
-	rqt -p ./Hi/Sup.js
+	rqt -c ./Hi/Sup.js
 
 will create the following file:
 
@@ -101,7 +101,7 @@ will create the following file:
 
 Bad options will result in the default options being used. You can also pass in multiple filepaths and they will all be created with the same options.
 
-	rqt Hi.js What.jsx IsUp.jsx
+	rqt Hi.js What.jsx ./secret_folder/IsUp.jsx
 
 Like that^^
 
