@@ -6,13 +6,13 @@
 Save some typing by auto-generating simple React component skeletons. All you have to do is specify the path to the component!
 
 ## Installation
-	npm install *name goes here*
+	npm install react-quick-templates
 ## Usage
 You can use react-quick-templates in two ways: from your code or from the command line.
 ### From your code
 Using react-quick-templates from your code is easy. All you have to do is say if you want an ES5 or ES6 style component, a presentation (p) or container (c) component, the path to your component, and a callback method (which will return the component's filepath and name).
 
-	var rqt = require(*name goes here*);
+	var rqt = require('react-quick-templates');
 
 	//version (es5 or es6), type (p or c), filepath, callback
 	rqt.createComponent('es5', 'c', './Hello.js', (error) => {
