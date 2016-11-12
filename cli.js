@@ -40,6 +40,6 @@ function _logResults(error, filePath, componentName) {
 		console.log(chalk.green('Successfully created component ' + componentName + ' at ' + filePath + '!'));
 	}
 	else {
-		console.log(chalk.red('There was an error creating the component ' + componentName + ' at ' + filePath + '...'));
+		console.log(chalk.red('Error creating the component ' + componentName + ' at ' + filePath + '. ' + error));
 	}
 }
