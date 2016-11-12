@@ -103,7 +103,14 @@ Bad options will result in the default options being used. You can also pass in 
 
 	rqt Hi.js What.jsx ./secret_folder/IsUp.jsx
 
-Like that^^
+Like that^^. That command would result in the following directory structure:
+
+	|-- Hi.js
+	|-- What.jsx
+	|-- secret_folder
+	  |-- IsUp.jsx
+
+Each of those files would be a React component, with the skeleton filled out and ready for your custom code!
 
 ## Issues
 If you run into any issues using react-quick-templates or have any feature suggestions, drop an issue or a pull request and I'll take a look at it!
