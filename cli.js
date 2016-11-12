@@ -13,7 +13,7 @@ var chalk = require('chalk');
 var rqt = require('./rqt');
 
 program
-	.version('0.0.3')
+	.version('0.0.4')
 	.arguments('<file> [otherFiles...]')
 	.action(function (file, otherFiles) {
 		rqt.createComponent(program.esversion, program.type, file, _logResults);

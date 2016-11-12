@@ -1,6 +1,6 @@
 {
   "name": "react-quick-templates",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Auto-generate react component skeletons to quickstart your development.",
   "repository": {
     "type": "git",
@@ -25,7 +25,7 @@
 		"rqt.js",
 		"cli.js",
 		"constants.js",
-		"./templates/"
+		"templates"
 	],
   "dependencies": {
     "chalk": "^1.1.3",
