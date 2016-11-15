@@ -19,7 +19,7 @@ Using react-quick-templates from your code is easy. All you have to do is say if
 	var rqt = require('react-quick-templates');
 
 	//version (es5 or es6), type (p or c), filepath, callback
-	rqt.createComponent('es5', 'c', './Hello.js', (error) => {
+	rqt.createComponent('es5', 'c', './Hello.js', (error, path, name) => {
 		if(error === null) {
 			console.log("Boom. Done.");
 		}
