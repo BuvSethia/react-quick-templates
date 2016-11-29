@@ -1,6 +1,6 @@
 /**
  * @file
- * Unit tests for the rqt.createComponent
+ * Unit tests for rqt.createComponent
  *
  */
 

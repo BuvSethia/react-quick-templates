@@ -9,7 +9,18 @@
 var fs = require('fs');
 var path = require('path');
 var write = require('write');
-var CONSTANTS = require('./constants');
+
+var CONSTANTS = {
+	ES5_CONTAINER: './templates/es5/container.template',
+	ES5_PRESENTATION: './templates/es5/presentation.template',
+	ES6_CONTAINER: './templates/es6/container.template',
+	ES6_PRESENTATION: './templates/es6/presentation.template',
+	ERROR: {
+		BAD_OPTIONS: 'Unrecognized options. version must be "es5" or "es6" and type must be "p" or "c"...',
+		TEMPLATE_ERROR: 'Error reading component template. Please raise an issue on the RQT GitHub Repo...',
+		WRITE_ERROR: 'There was an error writing the component skeleton. Please check your filepath and try again...'
+	}
+};
 
 /**
  * What the createComponent callback looks like
@@ -25,7 +36,6 @@ var CONSTANTS = require('./constants');
  * @param {String} type - Is this a presentation or container component
  * @param {String} path - Path of the file to be created
  * @param {callback} callback - callback function after component write is executed
- * @returns {Boolean} Whether or not the file creation was successful
  */
 function createComponent(version, type, path, callback) {
 	if (version === 'es5' && type === 'p') {
@@ -50,7 +60,6 @@ function createComponent(version, type, path, callback) {
  * @param {String} template - Path (starting at template directory) of template being used
  * @param {String} filePath - Path to file being written
  * @param {callback} callback - callback function after component write is executed
- * @returns {Boolean} Whether or not the file creation was successful
  */
 function _writeComponent(template, filePath, callback) {
 	// Get the individual components of the filepath provided
