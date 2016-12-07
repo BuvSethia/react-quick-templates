@@ -26,7 +26,7 @@ function createComponentsFromFile(version, defaultType, txtFile, callback) {
 	});
 	reader.on('line', function (line) {
 		// If the line specifies a file
-		if (line.indexOf('.js') > -1) {
+		if (line.indexOf('.js') > -1 || line.indexOf('.ts') > -1) {
 			// Split the file from the component type
 			var splitLine = line.split(',');
 
@@ -46,7 +46,7 @@ function createComponentsFromFile(version, defaultType, txtFile, callback) {
 			var componentType = defaultType;
 			// If component type was specified and valid, don't use the default
 			if (splitLine.length > 1 && _validComponentType(splitLine[1].trim())) {
-				componentType = splitLine[1].trim();
+				componentType = splitLine[1].trim().toLowerCase();
 			}
 
 			// Do the actual component write now that we have the information we need
@@ -59,6 +59,11 @@ function createComponentsFromFile(version, defaultType, txtFile, callback) {
 	});
 }
 
+/**
+ * Checks if the component type entered by the user is valid
+ * @param {String} type - The component type
+ * @returns {Boolean} Whether or not the component type is valid
+ */
 function _validComponentType(type) {
 	return type === 'p' || type === 'c';
 }
