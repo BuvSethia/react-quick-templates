@@ -6,6 +6,7 @@
 
 import fs from 'fs';
 import test from 'ava';
+import rimraf from 'rimraf';
 import batchInsert from '../batch-insert';
 
 test.cb('Test 1 - Single file without parital directory', t => {
@@ -123,4 +124,8 @@ test.cb('Test 5 - No component type specified', t => {
 			});
 		}
 	});
+});
+
+test.afterEach.always.cb('Clean up created directory', t => {
+	rimraf('created', t.end);
 });

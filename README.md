@@ -13,53 +13,8 @@ This will install it locally, though if you are planning on using the command li
 	npm install react-quick-templates -g
 
 ## Usage
-You can use react-quick-templates in two ways: from your code or from the command line.
 
-### From your code
-Using react-quick-templates from your code is easy. All you have to do is say if you want an ES5 or ES6 style component, a presentation (p) or container (c) component, the path to your component, and a callback method (which will return the component's filepath and name).
-
-	import rqt from 'react-quick-templates';
-
-	//version (es5 or es6), type (p or c), filepath, callback
-	rqt.createComponent('es5', 'c', './Hello.js', (error, path, name) => {
-		if(error === null) {
-			console.log("Boom. Done.");
-		}
-	});
-
-And we're done! You should see the following Hello.js file in the current directory.
-
-	// Hello.js
-
-	'use strict';
-
-	var React = require('react');
-	var PropTypes = React.PropTypes;
-
-	var Hello = React.createClass({
-		getInitialState: function () {
-			return {
-
-			};
-		},
-
-		render: function () {
-			return (
-				<div>
-
-				</div>
-			);
-		},
-
-		propTypes: {
-
-		}
-	});
-
-	module.exports = Hello;
-
-### From the command line
-This is the best way to use react-quick-templates.
+The best way to use react-quick-templates is from the command line.
 
 	rqt --help
 
@@ -75,7 +30,7 @@ This is the best way to use react-quick-templates.
 
 react-quick-templates' CLI defaults to ES6 container components, but you can specify your ES-version and component type by passing in options. For example, the command:
 
-	rqt -c ./Hi/Sup.js
+	rqt ./Hi/Sup.js
 
 will create the following file:
 
@@ -151,7 +106,7 @@ If a line is a filepath, a file will be created at that location using the setti
 
 	path/to/File.jsx, p
 
-If you don't specify a component type, the default one will be used. You can use rqt's command line options to specify what the default should be.
+If you don't specify a component type, the default one will be used. You can use react-quick-templates' command line options to specify what the default should be.
 
 #### Partial Path
 

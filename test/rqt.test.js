@@ -140,6 +140,6 @@ test.cb('ES6 presentation in a new directory', t => {
 	});
 });
 
-test.after.always.cb('Clean up created directory', t => {
+test.afterEach.always.cb('Clean up created directory', t => {
 	rimraf(created, t.end);
 });
