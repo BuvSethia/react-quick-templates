@@ -121,7 +121,7 @@ The above file would result in the following:
 	|-partial
 	 |-path
 	  |-file1.js
-		|-file2.js
+	  |-file2.js
 
 You can overwrite the partial path in one of two ways: by specifying a new one, or by putting a ./ in front of a file path. The former will overwrite the partial path to whatever your specified, while the latter will create the file you specified and reset the partial path to the current directory.
 
@@ -135,10 +135,10 @@ The above would result in the following:
 
 	|-partial
  	 |-path1
-		|-afile.js
+	  |-afile.js
 	|-partial
 	 |-path2
-		|-anotherfile.js
+	  |-anotherfile.js
 	|-incurrentdir.js
 
 ### Batch Insert Command Line Options
