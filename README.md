@@ -93,7 +93,7 @@ This will create the following directory structure, with each file being a React
 		|-we
 		 |-have
 		  |-cookies.jsx
-			|-pie.jsx
+		  |-pie.jsx
 		|-partytime.js
 
 ### Batch Insert File Syntax
