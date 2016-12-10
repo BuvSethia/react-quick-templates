@@ -3,7 +3,7 @@
 ![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)
 
 
-Save some typing by auto-generating simple React component skeletons. All you have to do is specify the path to the component, and all sub-directories and the component skeleton will be automatically generated for you!
+Save some typing by auto-generating simple, ready to go, *linted and tested* React component skeletons. All you have to do is specify the path to the component, and all sub-directories and the component skeleton will be automatically generated for you!
 
 ## Installation
 	npm install react-quick-templates
