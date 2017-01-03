@@ -14,7 +14,7 @@ var rqt = require('./rqt');
 var batchInsert = require('./batch-insert');
 
 program
-	.version('1.0.0')
+	.version('1.0.1')
 	.arguments('<file> [otherFiles...]')
 	.action(function (file, otherFiles) {
 		if (program.batch) {
